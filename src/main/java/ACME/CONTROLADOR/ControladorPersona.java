@@ -14,4 +14,8 @@ public class ControladorPersona extends PersonaDAO {
     public boolean modificarEstadoPersona(Object object, Estado_Persona estadoPersona){
         return modificarEstado(object, estadoPersona);
     }
+
+    public Object[][] reportes(){
+        return obtenerDatosReportes();
+    }
 }
