@@ -89,11 +89,10 @@ public class GestionVehiculoGuarda extends JFrame {
         btnAgregar.setBounds(450, 230, 100, 30);
         add(btnAgregar);
 
-        btnCancelar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Regresando al Menú Principal...");
-                dispose();
-            }
+        btnCancelar.addActionListener(e->{
+            MenuGuarda mg = new MenuGuarda();
+            mg.setVisible(true);
+            dispose();
         });
 
         btnAgregar.addActionListener(e->{

@@ -136,7 +136,7 @@ public class MenuSupervisor extends JFrame {
         });
         
         btnGestionarGuardiaSeguridad.addActionListener(e -> {
-                GestionFuncionario gestionarGuardia = new GestionFuncionario();
+                GestionGuarda gestionarGuardia = new GestionGuarda();
                 gestionarGuardia.setVisible(true);
                 dispose();
         });

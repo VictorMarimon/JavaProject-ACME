@@ -140,7 +140,11 @@ public class ReporteGuarda extends JFrame {
         add(mainPanel);
 
         // Acciones de los botones
-        btnCancelar.addActionListener(e -> dispose());
+        btnCancelar.addActionListener(e -> {
+            MenuGuarda mg = new MenuGuarda();
+            mg.setVisible(true);
+            dispose();
+        });
 
         btnReportar.addActionListener(e -> {
 
