@@ -25,39 +25,39 @@ Este sistema registra la correcta entrada y salida de personas al complejo, gara
 
 El sistema cubre las siguientes funcionalidades clave:
 
-1. Gestión de Usuarios del Sistema:
+*1. Gestión de Usuarios del Sistema:*
 - Un superusuario es el encargado de crear a los supervisores de seguridad.
 - Los supervisores gestionan la creación de guardas de seguridad y funcionarios de empresas.
 - Los funcionarios de empresas pueden registrar trabajadores e invitados asociados a su empresa. En las empresas solo hay un funcionario con este privilegio.
 - No se permite la eliminación de usuarios, pero pueden inactivarse para mantener la consistencia del sistema.
 
-2. Registro de Accesos:
+*2. Registro de Accesos:*
 - Las personas ingresarán al complejo presentando su documento de identidad.
 - El número de documento se puede leer mediante un lector de código de barras o ingresarse manualmente por el guarda de seguridad.
 - Si una persona no está registrada, su ingreso será rechazado hasta que el funcionario de la empresa anfitriona realice el registro correspondiente.
 - Las anotaciones que tengan los empleados o visitantes deben ser visibles a los guardas en el momento del ingreso al complejo
 - Si una persona tiene la anotación de prohibición del ingreso debe ser muy visible al guarda para que no le permita la entrada hasta que la medida sea levantada.
 
-3. Control de Salidas:
+*3. Control de Salidas:*
 - Al salir del complejo, la persona debe presentar su documento para registrar la salida.
 - No se permite el ingreso a las personas que no registren la salida correctamente hasta que se haga este proceso manualmente por el funcionario de la empresa, si es un trabajador o invitado, o el supervisor de seguridad si cualquier otro tipo de persona. Este proceso debe quedar debidamente registrado en el sistema (fecha, hora, quien hizo el proceso y anotaciones).
 
-4. Gestión de Vehículos:
+*4. Gestión de Vehículos:*
 - Si una persona ingresa en un vehículo, se registra la placa del vehículo.
 - Cada persona dentro del vehículo debe registrar su entrada individualmente.
 
-5. Manejo de Incidentes:
+*5. Manejo de Incidentes:*
 - Los supervisores de seguridad pueden registrar anotaciones sobre comportamientos indebidos.
 - Estas anotaciones pueden aplicar la opción del estado de prohibición de acceso al complejo.
 - El levantamiento de esta restricción debe estar acompañado de una justificación y quedar registrado.
 - Las anotaciones y restricciones nunca se borran del sistema, siempre queda la trazabilidad de estas, aunque los estados cambien con el tiempo.
 
-6. Trazabilidad y Reportes:
+*6. Trazabilidad y Reportes:*
 - Reportes detallados sobre usuarios activos e inactivos: supervisores, guardas y funcionarios.
 - Listados de trabajadores e invitados por empresa.
 - Informes de trazabilidad de acceso (ingresos y salidas) de trabajadores y funcionarios en rangos de fechas.
 
-7. Pantallas y Operación:
+*7. Pantallas y Operación:*
 - La pantalla principal del guarda permite registrar rápidamente accesos.
 - Los supervisores pueden monitorear en tiempo real las actividades en la entrada en una pantalla del sistema.
 - Los funcionarios visualizan el estado actual de trabajadores e invitados en el complejo. Esto es, pueden saber que han ingresado al complejo y que se dirigen hacia la oficina. 
@@ -67,12 +67,19 @@ El sistema cubre las siguientes funcionalidades clave:
 ## Tecnologías 🖥️
 
 - **Java:** Lenguaje de programación multiplataforma orientado a objetos que se ejecuta en miles de millones de dispositivos de todo el mundo.
+  
 - **Apache NetBeans IDE:** Es un entorno de desarrollo integrado, gratuito y de código abierto para el desarrollo de aplicaciones en los sistemas operativos Windows, Mac, Linux y Solaris.
+  
 - **Java Swing:** Biblioteca gráfica que proporciona una serie de clases que representa de forma gráfica una entrada de datos o una acción específica en una interface gráfica de usuario.
+  
 - **MySQL Workbench:** Proporciona modelado de datos, desarrollo de SQL y herramientas de administración integrales para configuración de servidores, administración de usuarios, copias de seguridad y mucho más.
+  
 - **Visual Studio Code:** Editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código.
+  
 - **Lucidchart:** Herramienta de diagramación basada en la web, que permite a los usuarios colaborar y trabajar juntos en tiempo real, creando diagramas de flujo, organigramas, esquemas de sitios web, diseños UML, mapas mentales, prototipos de software y muchos otros tipos de diagrama.
+  
 - **Star UML:** Herramienta para el modelamiento de software basado en los estándares UML (Unified Modeling Language) y MDA (Model Driven Arquitecture).
+  
 - **Clever Cloud:** Ofrece un servicio de plataforma como servicio con sede en Europa. Ayuda a los equipos de desarrollo a poner en producción aplicaciones y servicios digitales en una infraestructura confiable, con escalabilidad automática y precios transparentes.
 
 > [!IMPORTANT]
