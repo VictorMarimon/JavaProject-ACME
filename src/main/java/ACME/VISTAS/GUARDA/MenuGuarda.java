@@ -1,101 +1,78 @@
 package ACME.VISTAS.GUARDA;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import ACME.VISTAS.FUNCIONARIO.GestionInvitado;
+import ACME.VISTAS.FUNCIONARIO.GestionTrabajador;
+import ACME.VISTAS.Login;
 
-class MenuGuarda extends JFrame {
-    private CardLayout cardLayout;
-    private JPanel mainPanel;
-    private JPanel menuPanel;
+import javax.swing.*;
+
+public class MenuGuarda extends JFrame {
+    private JButton btnGestionarSalida, btnGestionarEntrada, btnReportes,
+            btnGestionarVehiculo, btnCerrarSesion, btnReportarUsuario;
 
     public MenuGuarda() {
-        setTitle("Sistema de Guarda");
+        setTitle("Menú Principal");
+        setSize(600, 400);
+        setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
         setLocationRelativeTo(null);
 
-        // Inicializar el CardLayout para la navegación entre pantallas
-        cardLayout = new CardLayout();
-        mainPanel = new JPanel(cardLayout);
+        btnGestionarSalida = new JButton("GESTIONAR SALIDA");
+        btnGestionarSalida.setBounds(50, 50, 200, 40);
+        add(btnGestionarSalida);
 
-        // Crear e inicializar todas las pantallas
-        initComponents();
+        btnGestionarEntrada = new JButton("GESTIONAR ENTRADA");
+        btnGestionarEntrada.setBounds(50, 120, 200, 40);
+        add(btnGestionarEntrada);
 
-        // Añadir el panel principal al frame
-        add(mainPanel);
-    }
+        btnReportes = new JButton("REPORTES");
+        btnReportes.setBounds(350, 50, 200, 40);
+        add(btnReportes);
 
-    private void initComponents() {
-        // Panel del menú principal con degradado
-        menuPanel = new JPanel(new BorderLayout()) {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                Graphics2D g2d = (Graphics2D) g;
-                g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-                int w = getWidth();
-                int h = getHeight();
-                Color color1 = new Color(66, 139, 202);
-                Color color2 = new Color(219, 238, 244);
-                GradientPaint gp = new GradientPaint(0, 0, color1, w, h, color2);
-                g2d.setPaint(gp);
-                g2d.fillRect(0, 0, w, h);
-            }
-        };
+        btnGestionarVehiculo = new JButton("GESTIONAR VEHICULO");
+        btnGestionarVehiculo.setBounds(350, 120, 200, 40);
+        add(btnGestionarVehiculo);
 
-        // Panel de botones del menú
-        JPanel buttonPanel = new JPanel(new GridBagLayout());
-        buttonPanel.setOpaque(false);
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
+        btnReportarUsuario = new JButton("REPORTAR USUARIO");
+        btnReportarUsuario.setBounds(50, 190, 200, 40);
+        add(btnReportarUsuario);
 
-        // Título
-        JLabel titulo = new JLabel("MENÚ PRINCIPAL");
-        titulo.setFont(new Font("Arial", Font.BOLD, 28));
-        titulo.setForeground(Color.WHITE);
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 2;
-        gbc.insets = new Insets(20, 0, 40, 0);
-        buttonPanel.add(titulo, gbc);
+        btnCerrarSesion = new JButton("cerrar sesión");
+        btnCerrarSesion.setBounds(50, 280, 120, 30);
+        add(btnCerrarSesion);
 
-        // Botones del menú
-        String[] opciones = {"Reportes", "Informes", "Citas", "Inventario"};
-        for (int i = 0; i < opciones.length; i++) {
-            JButton boton = createMenuButton(opciones[i]);
-            gbc.gridx = i % 2;
-            gbc.gridy = (i / 2) + 1;
-            gbc.gridwidth = 1;
-            gbc.insets = new Insets(10, 20, 10, 20);
-            buttonPanel.add(boton, gbc);
-        }
+        btnGestionarEntrada.addActionListener(e->{
+            GestionEntrada gi = new GestionEntrada();
+            gi.setVisible(true);
+            dispose();
+        });
 
-        menuPanel.add(buttonPanel, BorderLayout.CENTER);
+        btnReportes.addActionListener(e -> {
+            ReportesGuarda rg = new ReportesGuarda();
+            rg.setVisible(true);
+            dispose();
+        });
 
-        // Añadir todas las pantallas al mainPanel
-        mainPanel.add(menuPanel, "Menu");
+        btnGestionarVehiculo.addActionListener(e -> {
+            GestionVehiculoGuarda gv = new GestionVehiculoGuarda();
+            gv.setVisible(true);
+            dispose();
+        });
 
-        // Mostrar el menú principal inicialmente
-        cardLayout.show(mainPanel, "Menu");
-    }
+        btnReportarUsuario.addActionListener(e->{
+            ReporteGuarda rg =new ReporteGuarda();
+            rg.setVisible(true);
+            dispose();
+        });
 
-    private JButton createMenuButton(String texto) {
-        JButton boton = new JButton(texto);
-        boton.setPreferredSize(new Dimension(200, 80));
-        boton.setFont(new Font("Arial", Font.BOLD, 16));
-        boton.setBackground(new Color(66, 139, 202));
-        boton.setForeground(Color.WHITE);
-        boton.setFocusPainted(false);
-        boton.setBorder(BorderFactory.createRaisedBevelBorder());
+        btnCerrarSesion.addActionListener(e-> {
+            Login login = new Login();
 
-        boton.addActionListener(e -> cardLayout.show(mainPanel, texto));
+            login.setVisible(true);
+            dispose();
+        });
 
-        return boton;
-    }
-
-    public void navegarA(String pantalla) {
-        cardLayout.show(mainPanel, pantalla);
+        setVisible(true);
     }
 
     public static void main(String[] args) {
