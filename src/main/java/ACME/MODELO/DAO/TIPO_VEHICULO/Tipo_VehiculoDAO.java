@@ -2,9 +2,6 @@ package ACME.MODELO.DAO.TIPO_VEHICULO;
 
 import ACME.MODELO.CONEXION.Conexion;
 import ACME.MODELO.DAO.IDAO;
-import ACME.MODELO.DAO.TIPO.Tipo;
-import ACME.MODELO.DAO.VEHICULO.Vehiculo;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +27,7 @@ public class Tipo_VehiculoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM TIPO_VEHICULO WHERE TIPO = ?";
+        var sql = "SELECT * FROM tipo_vehiculo WHERE TIPO = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -72,7 +69,7 @@ public class Tipo_VehiculoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ID FROM TIPO_VEHICULO WHERE TIPO = ?";
+        var sql = "SELECT ID FROM tipo_vehiculo WHERE TIPO = ?";
 
         int ID;
 
@@ -108,7 +105,7 @@ public class Tipo_VehiculoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT TIPO FROM TIPO_VEHICULO;";
+        var sql = "SELECT TIPO FROM tipo_vehiculo;";
 
         try {
             ps = con.prepareStatement(sql);

@@ -24,7 +24,7 @@ public class PaisDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM PAIS;";
+        var sql = "SELECT * FROM pais;";
 
         try{
             ps = con.prepareStatement(sql);

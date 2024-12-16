@@ -2,7 +2,6 @@ package ACME.MODELO.DAO.VEHICULO;
 
 import ACME.MODELO.CONEXION.Conexion;
 import ACME.MODELO.DAO.IDAO;
-import ACME.MODELO.DAO.PERSONA.Persona;
 import ACME.MODELO.DAO.TIPO_VEHICULO.Tipo_Vehiculo;
 import ACME.MODELO.DAO.TIPO_VEHICULO.Tipo_VehiculoDAO;
 
@@ -10,7 +9,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class VehiculoDAO implements IDAO {
@@ -31,7 +29,7 @@ public class VehiculoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM VEHICULO WHERE PLACA = ?";
+        var sql = "SELECT * FROM vehiculo WHERE PLACA = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -74,7 +72,7 @@ public class VehiculoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "INSERT INTO VEHICULO(PLACA, MODELO, MARCA, MOTOR, CILINDRAJE, COLOR, TIPO_VEHICULO_ID)\n" +
+        var sql = "INSERT INTO vehiculo(PLACA, MODELO, MARCA, MOTOR, CILINDRAJE, COLOR, TIPO_VEHICULO_ID)\n" +
                 "VALUES(?, ?, ?, ?, ?, ?, ?);";
 
         try{

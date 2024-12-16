@@ -47,7 +47,7 @@ public class Registro_AccesoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        String sql = "INSERT INTO REGISTRO_ACCESO(HORA_ENTRADA, HORA_SALIDA, ACCESO_ID)\n" +
+        String sql = "INSERT INTO registro_acceso(HORA_ENTRADA, HORA_SALIDA, ACCESO_ID)\n" +
                 "VALUES(?, ?, ?);";
 
         try{

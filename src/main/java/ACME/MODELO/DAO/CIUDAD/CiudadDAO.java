@@ -42,7 +42,7 @@ public class CiudadDAO implements IDAO {
         ResultSet rs;
 
         var con = conexionInst.getConexion();
-        var sql = "SELECT ID FROM CIUDAD WHERE NOMBRE_CIUDAD = ?";
+        var sql = "SELECT ID FROM ciudad WHERE NOMBRE_CIUDAD = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -75,7 +75,7 @@ public class CiudadDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT NOMBRE_CIUDAD FROM CIUDAD;";
+        var sql = "SELECT NOMBRE_CIUDAD FROM ciudad;";
 
         try {
             ps = con.prepareStatement(sql);

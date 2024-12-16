@@ -31,7 +31,7 @@ public class EmpresaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM EMPRESA WHERE NIT = ?";
+        var sql = "SELECT * FROM empresa WHERE NIT = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -76,7 +76,7 @@ public class EmpresaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "INSERT INTO EMPRESA(NIT, EMPRESA, FECHA_ASOCIACION, TELEFONO, EMAIL, RAZON_SOCIAL, ESTADO_EMPRESA_ID, DIRECCION_ID)\n" +
+        var sql = "INSERT INTO empresa(NIT, EMPRESA, FECHA_ASOCIACION, TELEFONO, EMAIL, RAZON_SOCIAL, ESTADO_EMPRESA_ID, DIRECCION_ID)\n" +
                 "VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
 
         try{

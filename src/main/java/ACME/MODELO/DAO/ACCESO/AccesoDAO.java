@@ -48,7 +48,7 @@ public class AccesoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        String sql = "INSERT INTO ACCESO(MOTIVO, COMENTARIOS, TIPO_ACCESO_ID, ESTADO_ID)\n" +
+        String sql = "INSERT INTO acceso(MOTIVO, COMENTARIOS, TIPO_ACCESO_ID, ESTADO_ID)\n" +
                 "VALUES(?, ?, ?, ?);";
 
         try{
@@ -96,7 +96,7 @@ public class AccesoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ID FROM ACCESO WHERE MOTIVO = ? AND COMENTARIOS = ?";
+        var sql = "SELECT ID FROM acceso WHERE MOTIVO = ? AND COMENTARIOS = ?";
 
         int ID;
 

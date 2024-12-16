@@ -47,7 +47,7 @@ public class EmpleadoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        String sql = "INSERT INTO EMPLEADO(PERSONA_CEDULA, EMPRESA_NIT, CARGO_ID)\n" +
+        String sql = "INSERT INTO empleado(PERSONA_CEDULA, EMPRESA_NIT, CARGO_ID)\n" +
                 "VALUES(?,?,?);";
 
         try{

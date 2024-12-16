@@ -28,7 +28,7 @@ public class Tipo_AccesoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM TIPO_ACCESO WHERE TIPO = ?";
+        var sql = "SELECT * FROM tipo_acceso WHERE TIPO = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -70,7 +70,7 @@ public class Tipo_AccesoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ID FROM TIPO_ACCESO WHERE TIPO = ?";
+        var sql = "SELECT ID FROM tipo_acceso WHERE TIPO = ?";
 
         int ID;
 

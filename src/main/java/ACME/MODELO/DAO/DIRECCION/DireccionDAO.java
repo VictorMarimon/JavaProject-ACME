@@ -45,7 +45,7 @@ public class DireccionDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        String sql = "INSERT INTO DIRECCION( CALLE, CARRERA, TRANSVERSAL, DIAGONAL, NUMERO, CIUDAD_ID)\n" +
+        String sql = "INSERT INTO direccion( CALLE, CARRERA, TRANSVERSAL, DIAGONAL, NUMERO, CIUDAD_ID)\n" +
                 "VALUES(?,?,?,?,?,?);";
 
         try{
@@ -88,7 +88,7 @@ public class DireccionDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ID FROM DIRECCION WHERE CALLE = ? AND CARRERA = ? AND TRANSVERSAL = ? AND DIAGONAL = ? AND NUMERO = ?";
+        var sql = "SELECT ID FROM direccion WHERE CALLE = ? AND CARRERA = ? AND TRANSVERSAL = ? AND DIAGONAL = ? AND NUMERO = ?";
 
         int ID;
 

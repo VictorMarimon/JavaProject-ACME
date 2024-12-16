@@ -46,7 +46,7 @@ public class Reporte_PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "INSERT INTO REPORTE_PERSONA(DESCRIPCION, FECHA, PERSONA_CEDULA, GUARDA_CEDULA)\n" +
+        var sql = "INSERT INTO reporte_persona(DESCRIPCION, FECHA, PERSONA_CEDULA, GUARDA_CEDULA)\n" +
                 "VALUES(?, NOW(), ?, ?);";
 
         try{

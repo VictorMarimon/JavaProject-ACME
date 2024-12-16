@@ -28,7 +28,7 @@ public class CargoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM CARGO WHERE NOMBRE_CARGO = ?";
+        var sql = "SELECT * FROM cargo WHERE NOMBRE_CARGO = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -70,7 +70,7 @@ public class CargoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ID FROM CARGO WHERE NOMBRE_CARGO = ?";
+        var sql = "SELECT ID FROM cargo WHERE NOMBRE_CARGO = ?";
 
         int ID;
 

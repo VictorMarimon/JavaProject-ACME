@@ -28,7 +28,7 @@ public class EstadoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM ESTADO WHERE ESTADO = ?";
+        var sql = "SELECT * FROM estado WHERE ESTADO = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -70,7 +70,7 @@ public class EstadoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ID FROM ESTADO WHERE ESTADO = ?";
+        var sql = "SELECT ID FROM estado WHERE ESTADO = ?";
 
         int ID;
 

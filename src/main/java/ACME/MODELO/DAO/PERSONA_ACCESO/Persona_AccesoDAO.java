@@ -54,7 +54,7 @@ public class Persona_AccesoDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        String sql = "INSERT INTO PERSONA_ACCESO(GUARDA_CEDULA, ACCESO_ID, PERSONA_CEDULA, FECHA, VEHICULO_ID)\n" +
+        String sql = "INSERT INTO persona_acceso(GUARDA_CEDULA, ACCESO_ID, PERSONA_CEDULA, FECHA, VEHICULO_ID)\n" +
                 "VALUES(?, ?, ?, ?, ?);";
 
         try{

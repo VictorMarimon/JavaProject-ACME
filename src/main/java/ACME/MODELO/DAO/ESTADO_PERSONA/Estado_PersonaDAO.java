@@ -29,7 +29,7 @@ public class Estado_PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM ESTADO_PERSONA WHERE ESTADO_PER = ?";
+        var sql = "SELECT * FROM estado_persona WHERE ESTADO_PER = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -71,7 +71,7 @@ public class Estado_PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ID FROM ESTADO_PERSONA WHERE ESTADO_PER = ?";
+        var sql = "SELECT ID FROM estado_persona WHERE ESTADO_PER = ?";
 
         int ID;
 
@@ -107,7 +107,7 @@ public class Estado_PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT ESTADO_PER FROM ESTADO_PERSONA;";
+        var sql = "SELECT ESTADO_PER FROM estado_persona;";
 
         try {
             ps = con.prepareStatement(sql);

@@ -37,7 +37,7 @@ public class PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM PERSONA;";
+        var sql = "SELECT * FROM persona;";
 
         try{
             ps = con.prepareStatement(sql);
@@ -73,7 +73,7 @@ public class PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "SELECT * FROM PERSONA WHERE CEDULA = ?";
+        var sql = "SELECT * FROM persona WHERE CEDULA = ?";
 
         try{
             ps = con.prepareStatement(sql);
@@ -109,7 +109,7 @@ public class PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "UPDATE PERSONA\n" +
+        var sql = "UPDATE persona\n" +
                 "SET SEGUNDO_NOMBRE = ?\n" +
                 "WHERE CEDULA = ?;";
 
@@ -143,7 +143,7 @@ public class PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "INSERT INTO PERSONA(CEDULA, PRIMER_NOMBRE, SEGUNDO_NOMBRE, PRIMER_APELLIDO, SEGUNDO_APELLIDO, EMAIL, TELEFONO, FECHA_NACIMIENTO, GENERO, TIPO_ID, ESRADO_PERSONA_ID, DIRECCION_ID)\n" +
+        var sql = "INSERT INTO persona(CEDULA, PRIMER_NOMBRE, SEGUNDO_NOMBRE, PRIMER_APELLIDO, SEGUNDO_APELLIDO, EMAIL, TELEFONO, FECHA_NACIMIENTO, GENERO, TIPO_ID, ESRADO_PERSONA_ID, DIRECCION_ID)\n" +
                 "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?);";
 
         try{
@@ -199,7 +199,7 @@ public class PersonaDAO implements IDAO {
 
         Connection con = conexionInst.getConexion();
 
-        var sql = "UPDATE PERSONA\n" +
+        var sql = "UPDATE persona\n" +
                 "SET ESRADO_PERSONA_ID = ?\n" +
                 "WHERE CEDULA = ?;";
 
