@@ -99,8 +99,8 @@ public class ReportesSuperUsuario extends JFrame {
 
         // Acción del botón Regresar
         btnRegresar.addActionListener(e -> {
-            MenuSuperUsuario menuSupervisor = new MenuSuperUsuario();
-            menuSupervisor.setVisible(true);
+            MenuSuperUsuario menuSuperUsuario = new MenuSuperUsuario();
+            menuSuperUsuario.setVisible(true);
             dispose();
         });
 
