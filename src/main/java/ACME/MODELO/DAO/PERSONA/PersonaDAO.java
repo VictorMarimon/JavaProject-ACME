@@ -233,6 +233,77 @@ public class PersonaDAO implements IDAO {
 
     }
 
+    public Object[][] obtenerDatosReportes(){
+
+        ArrayList<Object[]> listaDatos = new ArrayList<>();
+
+        PreparedStatement ps;
+        ResultSet rs;
+
+        Connection con = conexionInst.getConexion();
+
+        var sql = "SELECT persona.PRIMER_NOMBRE, persona.PRIMER_APELLIDO, persona.TELEFONO, persona.EMAIL, persona.GENERO, estado_persona.ESTADO_PER, cargo.NOMBRE_CARGO, empresa.RAZON_SOCIAL, estado_empresa.ESTADO, persona_acceso.FECHA, registro_acceso.HORA_ENTRADA, registro_acceso.HORA_SALIDA, acceso.COMENTARIOS, vehiculo.PLACA FROM empresa\n" +
+                "INNER JOIN empleado\n" +
+                "ON empresa.NIT = empleado.EMPRESA_NIT\n" +
+                "INNER JOIN cargo\n" +
+                "ON empleado.CARGO_ID = cargo.ID\n" +
+                "INNER JOIN estado_empresa\n" +
+                "ON empresa.ESTADO_EMPRESA_ID = estado_empresa.ID\n" +
+                "INNER JOIN persona\n" +
+                "ON persona.CEDULA = empleado.PERSONA_CEDULA\n" +
+                "INNER JOIN estado_persona\n" +
+                "ON persona.ESRADO_PERSONA_ID = estado_persona.ID\n" +
+                "INNER JOIN persona_acceso\n" +
+                "ON persona.CEDULA = persona_acceso.PERSONA_CEDULA\n" +
+                "INNER JOIN vehiculo\n" +
+                "ON persona_acceso.VEHICULO_ID = vehiculo.PLACA\n" +
+                "INNER JOIN acceso\n" +
+                "ON persona_acceso.ACCESO_ID = acceso.ID\n" +
+                "INNER JOIN registro_acceso\n" +
+                "ON acceso.ID = registro_acceso.ACCESO_ID;";
+
+        try{
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()){
+                listaDatos.add(new Object[]{
+                        rs.getString("PRIMER_NOMBRE"),
+                        rs.getString("PRIMER_APELLIDO"),
+                        rs.getString("TELEFONO"),
+                        rs.getString("EMAIL"),
+                        rs.getString("GENERO"),
+                        rs.getString("ESTADO_PER"),
+                        rs.getString("NOMBRE_CARGO"),
+                        rs.getString("RAZON_SOCIAL"),
+                        rs.getString("ESTADO"),
+                        rs.getDate("FECHA"),
+                        rs.getTime("HORA_ENTRADA"),
+                        rs.getTime("HORA_SALIDA"),
+                        rs.getString("COMENTARIOS"),
+                        rs.getString("PLACA")
+                });
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error al buscar persona por cedula " + e.getMessage());
+        }finally {
+            try{
+                con.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar conexión " + e.getMessage());
+            }
+        }
+
+
+        Object[][] data = new Object[listaDatos.size()][14];
+        for (int i = 0; i < listaDatos.size(); i++) {
+            data[i] = listaDatos.get(i);
+        }
+
+        return data;
+    }
+
     public static void main(String[] args) {
         //AGREGAR
 
