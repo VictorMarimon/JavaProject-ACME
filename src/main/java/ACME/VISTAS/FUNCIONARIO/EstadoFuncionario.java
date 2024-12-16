@@ -125,7 +125,10 @@ public class EstadoFuncionario extends JFrame {
         add(mainPanel);
 
         // Acciones de los botones
-        btnCancelar.addActionListener(e -> dispose());
+        btnCancelar.addActionListener(e -> {
+            MenuFuncionario mf = new MenuFuncionario();
+            mf.setVisible(true);
+            dispose();});
 
         btnModificar.addActionListener(e -> {
 

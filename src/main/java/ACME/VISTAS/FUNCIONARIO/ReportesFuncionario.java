@@ -97,16 +97,13 @@ public class ReportesFuncionario extends JFrame {
 
         add(mainPanel);
 
-        // Acción del botón Regresar
         btnRegresar.addActionListener(e -> {
-            MenuSupervisor menuSupervisor = new MenuSupervisor();
-            menuSupervisor.setVisible(true);
+            MenuFuncionario mf = new MenuFuncionario();
+            mf.setVisible(true);
             dispose();
         });
 
-        // Acción del botón Consultar
         btnConsultar.addActionListener(e -> {
-            // Aquí iría la lógica para consultar los reportes
             JOptionPane.showMessageDialog(this, "Consulta realizada con éxito.");
         });
     }
@@ -121,9 +118,5 @@ public class ReportesFuncionario extends JFrame {
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
         button.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
         return button;
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new ReportesFuncionario().setVisible(true));
     }
 }

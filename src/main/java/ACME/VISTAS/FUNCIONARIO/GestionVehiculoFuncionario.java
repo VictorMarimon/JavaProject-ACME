@@ -1,22 +1,21 @@
-package ACME.VISTAS.GUARDA;
+package ACME.VISTAS.FUNCIONARIO;
 
-import ACME.CONTROLADOR.ControladorEstadoPersona;
 import ACME.CONTROLADOR.ControladorTipoVehiculo;
 import ACME.CONTROLADOR.ControladorVehiculo;
 import ACME.MODELO.DAO.TIPO_VEHICULO.Tipo_Vehiculo;
 import ACME.MODELO.DAO.VEHICULO.Vehiculo;
 
 import javax.swing.*;
-import java.awt.event.*;
-import java.util.HashSet;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
-public class GestionVehiculo extends JFrame {
+public class GestionVehiculoFuncionario extends JFrame {
     private JTextField txtPlaca, txtCilindraje, txtModelo, txtColor, txtMotor, txtMarca;
     private JComboBox<String> comboTipo;
     private JButton btnConsultar, btnAgregar, btnCancelar;
 
-    public GestionVehiculo() {
+    public GestionVehiculoFuncionario() {
         setTitle("Vehículo");
         setSize(600, 350);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -91,11 +90,10 @@ public class GestionVehiculo extends JFrame {
         btnAgregar.setBounds(450, 230, 100, 30);
         add(btnAgregar);
 
-        btnCancelar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Regresando al Menú Principal...");
-                dispose();
-            }
+        btnCancelar.addActionListener(e-> {
+            MenuFuncionario mf = new MenuFuncionario();
+            mf.setVisible(true);
+            dispose();
         });
 
         btnAgregar.addActionListener(e->{
@@ -150,7 +148,7 @@ public class GestionVehiculo extends JFrame {
     }
 
     public static void main(String[] args) {
-        GestionVehiculo gv = new GestionVehiculo();
+        GestionVehiculoFuncionario gv = new GestionVehiculoFuncionario();
         gv.setVisible(true);
     }
 }
