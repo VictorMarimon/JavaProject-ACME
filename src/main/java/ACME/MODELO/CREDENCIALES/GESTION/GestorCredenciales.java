@@ -34,8 +34,8 @@ public class GestorCredenciales<T extends Credencial>  {
                     credenciales.add(credencial);
                 }
             }
-        } catch (IOException e) {
-            throw new CredencialesException("Error al leer las credenciales", e);
+        } catch (Exception e) {
+            System.out.println("Error al leer las credenciales " + e.getMessage());
         }
         return credenciales;
     }
