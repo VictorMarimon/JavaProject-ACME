@@ -149,6 +149,4 @@ Si prefieres usar un IDE, sigue estos pasos:
 
 Hecho por [Alexis Hernández](https://github.com/AlexisH28) [Victor Marimon](https://github.com/VictorMarimon) [Gean Franco Jacome](https://github.com/gfranco7)  
 
-Alexis Rafael Hernández Tocora -- (alexismar1228@gmail.com)
-Gean Franco Jácome Laguna -- (deepagmf710@gmail.com)
-Victor Andres Marimon Mendoza -- (vmarimon1@udi.edu.co)
+Alexis Rafael Hernández Tocora -- (alexismar1228@gmail.com) Gean Franco Jácome Laguna -- (deepagmf710@gmail.com) Victor Andres Marimon Mendoza -- (vmarimon1@udi.edu.co)
