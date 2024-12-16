@@ -19,6 +19,8 @@ Este sistema registra la correcta entrada y salida de personas al complejo, gara
 
 ## Documentación 📄
 
+En este enlace podrán acceder a toda la información y documentación del proyecto!:
+https://drive.google.com/drive/folders/1ewVGSNl440wBEe14J951VwCKbfSC2uVv?usp=sharing
 
 
 ## Funcionalidades 🌐
