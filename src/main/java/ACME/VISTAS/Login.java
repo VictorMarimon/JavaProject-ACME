@@ -2,6 +2,7 @@ package ACME.VISTAS;
 
 import ACME.MODELO.CREDENCIALES.GESTION.Funcionario;
 import ACME.MODELO.CREDENCIALES.GESTION.GestorCredenciales;
+import ACME.MODELO.CREDENCIALES.GESTION.Guarda;
 import ACME.MODELO.CREDENCIALES.GESTION.Supervisor;
 import ACME.VISTAS.FUNCIONARIO.MenuFuncionario;
 import ACME.VISTAS.SUPERUSUARIO.MenuSuperUsuario;
@@ -102,10 +103,12 @@ public class Login extends JFrame {
 
                 GestorCredenciales<Supervisor> supervisorGestor = new GestorCredenciales<>(archivoSupervisor, Supervisor::fromString);
                 GestorCredenciales<Funcionario> funcionarioGestor = new GestorCredenciales<>(archivoFuncionario, Funcionario::fromString);
+                GestorCredenciales<Guarda> guardaGestor = new GestorCredenciales<>(archivoGuarda, Guarda::fromString);
 
                 try{
                     boolean validacionSupervisor = supervisorGestor.verificarCredencial(usuario, password);
                     boolean validacionFuncionario = funcionarioGestor.verificarCredencial(usuario, password);
+                    boolean validacionGuarda = guardaGestor.verificarCredencial(usuario, password);
 
                     if(validacionSupervisor){
                         MenuSupervisor menuSupervisor = new MenuSupervisor();
@@ -113,6 +116,8 @@ public class Login extends JFrame {
                     } else if (validacionFuncionario) {
                         MenuFuncionario menuFuncionario = new MenuFuncionario();
                         menuFuncionario.setVisible(true);
+                    } else if (validacionGuarda) {
+                        System.out.println("falta menu guarda");
                     } else if (usuario.equals("admin") && password.equals("admin")) {
                         MenuSuperUsuario menuSuperUsuario = new MenuSuperUsuario();
                         menuSuperUsuario.setVisible(true);
