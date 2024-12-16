@@ -1,79 +1,81 @@
 package ACME.VISTAS.FUNCIONARIO;
 
+import ACME.VISTAS.Login;
+
 import javax.swing.*;
-import java.awt.*;
 
 public class MenuFuncionario extends JFrame {
-    private JPanel mainPanel;
-    private JButton btnFuncionarios;
-    private JButton btnReportes;
-    private JButton btnConsultas;
+
+    private JButton btnGestionarTrabajador, btnGestionarInvitado, btnEstadoTrabajadorInvitado, btnReportes,
+            btnGestionarVehiculo, btnCerrarSesion;
 
     public MenuFuncionario() {
-        setTitle("Sistema de Gestión");
+        setTitle("Menú Principal");
+        setSize(600, 400);
+        setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        initComponents();
-        pack();
         setLocationRelativeTo(null);
-    }
 
-    private void initComponents() {
-        mainPanel = new JPanel();
-        mainPanel.setLayout(new GridBagLayout());
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        btnGestionarTrabajador = new JButton("GESTIONAR TRABAJADOR");
+        btnGestionarTrabajador.setBounds(50, 50, 200, 40);
+        add(btnGestionarTrabajador);
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(5, 5, 5, 5);
+        btnGestionarInvitado = new JButton("GESTIONAR INVITADO");
+        btnGestionarInvitado.setBounds(50, 120, 200, 40);
+        add(btnGestionarInvitado);
 
-        // Título
-        JLabel titleLabel = new JLabel("Menú Principal");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 2;
-        mainPanel.add(titleLabel, gbc);
+        btnEstadoTrabajadorInvitado = new JButton("ESTADO TRABAJADOR / INVITADO");
+        btnEstadoTrabajadorInvitado.setBounds(50, 190, 200, 40);
+        add(btnEstadoTrabajadorInvitado);
 
-        // Botones
-        btnFuncionarios = new JButton("Funcionarios");
-        btnReportes = new JButton("Reportes");
-        btnConsultas = new JButton("Consultas");
+        btnReportes = new JButton("REPORTES");
+        btnReportes.setBounds(350, 50, 200, 40);
+        add(btnReportes);
 
-        gbc.gridwidth = 1;
-        gbc.gridy = 1;
-        mainPanel.add(btnFuncionarios, gbc);
+        btnGestionarVehiculo = new JButton("GESTIONAR VEHICULO");
+        btnGestionarVehiculo.setBounds(350, 120, 200, 40);
+        add(btnGestionarVehiculo);
 
-        gbc.gridy = 2;
-        mainPanel.add(btnReportes, gbc);
+        btnCerrarSesion = new JButton("cerrar sesión");
+        btnCerrarSesion.setBounds(50, 280, 120, 30);
+        add(btnCerrarSesion);
 
-        gbc.gridy = 3;
-        mainPanel.add(btnConsultas, gbc);
-
-        // Eventos
-        btnFuncionarios.addActionListener(e -> {
-            GestionFuncionario funcionarios = new GestionFuncionario();
-            funcionarios.setVisible(true);
-            this.dispose();
+        btnEstadoTrabajadorInvitado.addActionListener(e->{
+            EstadoFuncionario ef = new EstadoFuncionario();
+            ef.setVisible(true);
+            dispose();
         });
 
-        btnReportes.addActionListener(e -> {
-            ReportesFuncionario reportes = new ReportesFuncionario();
-            reportes.setVisible(true);
-            this.dispose();
+        btnGestionarTrabajador.addActionListener(e -> {
+            GestionTrabajador gt = new GestionTrabajador();
+            gt.setVisible(true);
+            dispose();
         });
 
-        btnConsultas.addActionListener(e -> {
-            ReportesFuncionario consultas = new ReportesFuncionario();
-            consultas.setVisible(true);
-            this.dispose();
+        btnGestionarInvitado.addActionListener(e->{
+            GestionInvitado gi = new GestionInvitado();
+            gi.setVisible(true);
+            dispose();
         });
 
-        setContentPane(mainPanel);
+        btnGestionarVehiculo.addActionListener(e -> {
+            GestionVehiculoFuncionario gv = new GestionVehiculoFuncionario();
+            gv.setVisible(true);
+            dispose();
+        });
+
+        btnCerrarSesion.addActionListener(e-> {
+            Login login = new Login();
+
+            login.setVisible(true);
+            dispose();
+        });
+
+        setVisible(true);
     }
 
     public static void main(String[] args) {
         MenuFuncionario mf = new MenuFuncionario();
-
         mf.setVisible(true);
     }
 }
