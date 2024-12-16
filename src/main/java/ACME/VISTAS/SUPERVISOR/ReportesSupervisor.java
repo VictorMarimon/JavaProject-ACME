@@ -1,5 +1,7 @@
 package ACME.VISTAS.SUPERVISOR;
 
+import ACME.CONTROLADOR.ControladorPersona;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -71,7 +73,9 @@ public class ReportesSupervisor extends JFrame {
         String[] columnNames = {"Nombre", "Apellido", "Teléfono", "Email", "Género", "Estado", 
                                 "Cargo", "Tipo Empresa", "Estado Empresa", "Fecha Entrada", 
                                 "Hora Entrada", "Hora Salida", "Anotaciones", "Vehículo"};
-        Object[][] data = {}; // Aquí deberías cargar los datos de los reportes
+        ControladorPersona cp = new ControladorPersona();
+
+        Object[][] data = cp.reportes();
 
         tblReportes = new JTable(data, columnNames);
         tblReportes.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);  // Hacer que las columnas se ajusten automáticamente
