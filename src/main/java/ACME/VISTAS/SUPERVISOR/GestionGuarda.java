@@ -25,7 +25,7 @@ import java.util.List;
 public class GestionGuarda extends JFrame {
     // Declaración de componentes
     private JTextField txtIdentificacion, txtPrimerNombre, txtSegundoNombre, txtPrimerApellido, txtSegundoApellido,
-            txtUsuario, txtContrasena, txtCorreo, txtTelefono, txtNIT, txtCalle, txtCarrera, txtTransversal,
+            txtUsuario, txtContrasena, txtCorreo, txtTelefono, txtCalle, txtCarrera, txtTransversal,
             txtDiagonal, txtNumero;
 
     private JComboBox<String>  cbGenero, cbCiudad;
@@ -59,7 +59,6 @@ public class GestionGuarda extends JFrame {
         agregarLabelYDateChooser("Fecha Nacimiento", 450, 100, dateFechaNacimiento);
         agregarLabelYTexto("Correo Electronico", 450, 140, txtCorreo = new JTextField());
         agregarLabelYTexto("Teléfono", 450, 180, txtTelefono = new JTextField());
-        agregarLabelYTexto("NIT Empresa", 450, 260, txtNIT = new JTextField());
 
 
         cbCiudad = new JComboBox<>();
@@ -112,8 +111,6 @@ public class GestionGuarda extends JFrame {
 
             c.setNombre_ciudad((String) cbCiudad.getSelectedItem());
 
-            emp.setNit(Integer.parseInt(txtNIT.getText()));
-
             t.setNombre_tipo("Guarda de seguridad");
 
             ep.setEstado_per("Activo");
@@ -159,7 +156,6 @@ public class GestionGuarda extends JFrame {
                         txtContrasena.setText("");
                         txtCorreo.setText("");
                         txtTelefono.setText("");
-                        txtNIT.setText("");
                         txtCalle.setText("");
                         txtCarrera.setText("");
                         txtTransversal.setText("");
