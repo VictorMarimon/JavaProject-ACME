@@ -1,5 +1,6 @@
 package ACME.VISTAS.SUPERUSUARIO;
 
+import ACME.VISTAS.FUNCIONARIO.GestionInvitado;
 import ACME.VISTAS.Login;
 import ACME.VISTAS.SUPERVISOR.ReportesSupervisor;
 
@@ -77,22 +78,17 @@ public class MenuSuperUsuario extends JFrame {
 
         // Acciones de los botones
         btnReportes.addActionListener(e -> {
-            ReportesSupervisor reportes = new ReportesSupervisor();
+            ReportesSuperUsuario reportes = new ReportesSuperUsuario();
             reportes.setVisible(true);
             dispose();
         });
 
         btnAgregarSupervisor.addActionListener(e -> {
-            ReportesSupervisor supervisores = new ReportesSupervisor();
+            GestionSupervisor supervisores = new GestionSupervisor();
             supervisores.setVisible(true);
             dispose();
         });
 
-        btnModificarSupervisor.addActionListener(e -> {
-            ReportesSupervisor supervisores = new ReportesSupervisor();
-            supervisores.setVisible(true);
-            dispose();
-        });
 
         btnConexionDB.addActionListener(e -> {
             BasesDatosForm basesDatos = new BasesDatosForm();
