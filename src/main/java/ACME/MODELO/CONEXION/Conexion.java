@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexion {
-    private static final String name = "ACME";
-    private static final String url = "jdbc:mysql://localhost:3306/" + name;
-    private static final String user = "proyecto";
-    private static final String password = "proyecto";
+    private static final String name = "beghb5zf87ku4jmxe7p1";
+    private static final String url = "jdbc:mysql://beghb5zf87ku4jmxe7p1-mysql.services.clever-cloud.com/" + name;
+    private static final String user = "uhqyuqdrxcqmtf2t";
+    private static final String password = "Pw9FJ3esOWH2NZuj55s2";
 
     private static Connection conexion;
     private static Conexion instancia;
