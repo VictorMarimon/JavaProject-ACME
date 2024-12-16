@@ -6,6 +6,8 @@ import ACME.MODELO.DAO.ESTADO.EstadoDAO;
 import ACME.MODELO.DAO.IDAO;
 import ACME.MODELO.DAO.TIPO.Tipo;
 import ACME.MODELO.DAO.TIPO.TipoDAO;
+import ACME.MODELO.DAO.TIPO_ACCESO.Tipo_Acceso;
+import ACME.MODELO.DAO.TIPO_ACCESO.Tipo_AccesoDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,10 +39,10 @@ public class AccesoDAO implements IDAO {
         return false;
     }
 
-    public boolean agregarAcceso(Object object, Tipo tipo, Estado estado){
+    public boolean agregarAcceso(Object object, Tipo_Acceso tipo, Estado estado){
         EstadoDAO eDAO = new EstadoDAO();
 
-        TipoDAO tDAO = new TipoDAO();
+        Tipo_AccesoDAO tDAO = new Tipo_AccesoDAO();
 
         Acceso acceso = (Acceso) object;
 
@@ -126,12 +128,12 @@ public class AccesoDAO implements IDAO {
     }
 
     public static void main(String[] args) {
-        Tipo t = new Tipo();
+        Tipo_Acceso t = new Tipo_Acceso();
         Estado e = new Estado();
         Acceso a = new Acceso();
         AccesoDAO aDAO = new AccesoDAO();
 
-        t.setNombre_tipo("Acceso general");
+        t.setTipo("Acceso general");
 
         e.setEstado("Autorizado");
 
