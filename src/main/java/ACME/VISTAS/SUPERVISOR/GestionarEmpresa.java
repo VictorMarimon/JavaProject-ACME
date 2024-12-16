@@ -277,7 +277,6 @@ public class GestionarEmpresa extends JFrame {
                 txtRazonSocial.setText("");
                 txtCorreo.setText("");
                 txtTelefono.setText("");
-                txtCiudad.setText("");
                 txtCalle.setText("");
                 txtCarrera.setText("");
                 txtTransversal.setText("");
