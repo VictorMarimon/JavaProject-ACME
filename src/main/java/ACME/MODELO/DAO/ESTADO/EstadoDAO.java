@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EstadoDAO implements IDAO {
@@ -96,5 +97,35 @@ public class EstadoDAO implements IDAO {
         ID = -1;
 
         return ID;
+    }
+
+    public List<String> listarEstados() {
+        List<String> estados = new ArrayList<>();
+
+        PreparedStatement ps;
+        ResultSet rs;
+
+        Connection con = conexionInst.getConexion();
+
+        var sql = "SELECT ESTADO FROM estado;";
+
+        try {
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                estados.add(rs.getString("ESTADO"));
+            }
+
+        } catch (Exception e) {
+            System.out.println("Hubo un error al listar estados accesos: " + e.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar conexión: " + e.getMessage());
+            }
+        }
+        return estados;
     }
 }
