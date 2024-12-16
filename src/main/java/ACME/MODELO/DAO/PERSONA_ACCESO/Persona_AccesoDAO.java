@@ -55,14 +55,13 @@ public class Persona_AccesoDAO implements IDAO {
         Connection con = conexionInst.getConexion();
 
         String sql = "INSERT INTO persona_acceso(GUARDA_CEDULA, ACCESO_ID, PERSONA_CEDULA, FECHA, VEHICULO_ID)\n" +
-                "VALUES(?, ?, ?, ?, ?);";
+                "VALUES(?, ?, ?, NOW(), ?);";
 
         try{
             ps = con.prepareStatement(sql);
 
             ps.setInt(1, guarda.getCedula());
             ps.setInt(3, persona.getCedula());
-            ps.setString(4, personaAcceso.getFecha());
 
             int ID_ACCESO = aDAO.buscarID(acceso);
 
@@ -74,9 +73,9 @@ public class Persona_AccesoDAO implements IDAO {
 
 
             if (vehiculo.getPlaca() == null){
-                ps.setString(5, "");
+                ps.setString(4, "");
             }else{
-                ps.setString(5, vehiculo.getPlaca());
+                ps.setString(4, vehiculo.getPlaca());
             }
 
             ps.execute();

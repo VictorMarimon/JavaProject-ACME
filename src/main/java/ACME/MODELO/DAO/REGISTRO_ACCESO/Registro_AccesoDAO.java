@@ -3,11 +3,7 @@ package ACME.MODELO.DAO.REGISTRO_ACCESO;
 import ACME.MODELO.CONEXION.Conexion;
 import ACME.MODELO.DAO.ACCESO.Acceso;
 import ACME.MODELO.DAO.ACCESO.AccesoDAO;
-import ACME.MODELO.DAO.ESTADO.Estado;
-import ACME.MODELO.DAO.ESTADO.EstadoDAO;
 import ACME.MODELO.DAO.IDAO;
-import ACME.MODELO.DAO.TIPO.Tipo;
-import ACME.MODELO.DAO.TIPO.TipoDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,7 +34,7 @@ public class Registro_AccesoDAO implements IDAO {
         return false;
     }
 
-    public boolean agregarRegistroAcceso(Object object, Acceso acceso){
+    public boolean agregarRegistroAccesoEntrada(Object object, Acceso acceso){
         AccesoDAO aDAO = new AccesoDAO();
 
         Registro_Acceso registroAcceso = (Registro_Acceso) object;
@@ -48,20 +44,19 @@ public class Registro_AccesoDAO implements IDAO {
         Connection con = conexionInst.getConexion();
 
         String sql = "INSERT INTO registro_acceso(HORA_ENTRADA, HORA_SALIDA, ACCESO_ID)\n" +
-                "VALUES(?, ?, ?);";
+                "VALUES(CURTIME(), ?, ?);";
 
         try{
             ps = con.prepareStatement(sql);
 
-            ps.setString(1, registroAcceso.getHora_entrada());
-            ps.setString(2, registroAcceso.getHora_salida());
+            ps.setString(1, registroAcceso.getHora_salida());
 
             int ID_ACCESO = aDAO.buscarID(acceso);
 
             if (ID_ACCESO != -1){
-                ps.setInt(3, ID_ACCESO);
+                ps.setInt(2, ID_ACCESO);
             }else{
-                ps.setInt(3, 1);
+                ps.setInt(2, 1);
             }
 
             ps.execute();
@@ -91,6 +86,6 @@ public class Registro_AccesoDAO implements IDAO {
         ra.setHora_entrada("2023-01-15 09:00:00");
         ra.setHora_salida("2023-01-15 12:00:00");
 
-        raDAO.agregarRegistroAcceso(ra, a);
+        raDAO.agregarRegistroAccesoEntrada(ra, a);
     }
 }
