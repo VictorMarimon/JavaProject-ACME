@@ -1,4 +1,4 @@
-package ACME.VISTAS.FUNCIONARIO;
+package ACME.VISTAS.SUPERVISOR;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,6 @@ import ACME.CONTROLADOR.ControladorPersona;
 import ACME.MODELO.CREDENCIALES.GESTION.CredencialesException;
 import ACME.MODELO.CREDENCIALES.GESTION.Funcionario;
 import ACME.MODELO.CREDENCIALES.GESTION.GestorCredenciales;
-import ACME.MODELO.CREDENCIALES.GESTION.Supervisor;
 import ACME.MODELO.DAO.CARGO.Cargo;
 import ACME.MODELO.DAO.CIUDAD.Ciudad;
 import ACME.MODELO.DAO.DIRECCION.Direccion;
@@ -87,6 +86,11 @@ public class GestionFuncionario extends JFrame {
         btnAgregar = new JButton("agregar");
         btnAgregar.setBounds(680, 540, 100, 30);
         add(btnAgregar);
+
+        btnCancelar.addActionListener(e -> {
+            MenuSupervisor menuSupervisor = new MenuSupervisor();
+            menuSupervisor.setVisible(true);
+        });
 
         btnAgregar.addActionListener(e -> {
             ControladorDireccion cd = new ControladorDireccion();
