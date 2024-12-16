@@ -1,7 +1,6 @@
 package ACME.VISTAS.SUPERVISOR;
 
 import ACME.VISTAS.Login;
-import ACME.VISTAS.VISTAS.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -125,7 +124,7 @@ public class MenuSupervisor extends JFrame {
         });
         
         btnGestionarFuncionarioEmpresa.addActionListener(e -> {
-                GestionarFuncionario geationarFuncionario = new GestionarFuncionario();
+                GestionFuncionario geationarFuncionario = new GestionFuncionario();
                 geationarFuncionario.setVisible(true);
                 dispose();
         });
@@ -137,7 +136,7 @@ public class MenuSupervisor extends JFrame {
         });
         
         btnGestionarGuardiaSeguridad.addActionListener(e -> {
-                GestionarGuardia gestionarGuardia = new GestionarGuardia();
+                GestionFuncionario gestionarGuardia = new GestionFuncionario();
                 gestionarGuardia.setVisible(true);
                 dispose();
         });
